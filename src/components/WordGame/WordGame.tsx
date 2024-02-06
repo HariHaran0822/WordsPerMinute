@@ -13,7 +13,7 @@ const WordGame: React.FC = () => {
   const [correctWord, setCorrectWord] = useState<any>([]);
   const [maxTimeLimit, setMaxTimeLimit] = useState<number>(60);
   const [isFinished, setIsFinished] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(true);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [isStarted, setIsStarted] = useState<boolean>(false);
   const [playerWpm, setPlayerWpm] = useState<number>(0);
   const [correctWordCount, setCorrectWordCount] = useState<number>(0);
