@@ -22,7 +22,17 @@ const WordGame: React.FC = () => {
   const [accuracy, setAccuracy] = useState<number>(0);
 
   const handleTryAgain = () => {
-    window.location.reload();
+    loadSentence();
+    setactiveWordIndex(0);
+    setMaxTimeLimit(60);
+    setIsFinished(false);
+    setIsStarted(false);
+    setCorrectWordCount(0);
+    setIncorrectWordCount(0);
+    setTotalWordCount(0);
+    setAccuracy(0);
+    setCorrectWord([]);
+    setUserInput(" ");
   };
 
   useEffect(() => {
