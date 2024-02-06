@@ -23,6 +23,7 @@ const WordGame: React.FC = () => {
 
   const handleTryAgain = () => {
     loadSentence();
+    setAccuracy(0);
     setactiveWordIndex(0);
     setMaxTimeLimit(60);
     setIsFinished(false);
@@ -30,7 +31,6 @@ const WordGame: React.FC = () => {
     setCorrectWordCount(0);
     setIncorrectWordCount(0);
     setTotalWordCount(0);
-    setAccuracy(0);
     setCorrectWord([]);
     setUserInput(" ");
   };
@@ -58,8 +58,9 @@ const WordGame: React.FC = () => {
 
   const loadSentence = () => {
     let sentenceIndex: number = Math.floor(Math.random() * sentence.length);
-    setDisplaySentence(sentence[sentenceIndex]);
-    setTotalWordCount(displaySentence.split(" ").length);
+    const newSentense = sentence[sentenceIndex];
+    setDisplaySentence(newSentense);
+    setTotalWordCount(newSentense.split(" ").length);
   };
 
   const handleWpm = (value: number) => {
@@ -109,12 +110,10 @@ const WordGame: React.FC = () => {
   };
 
   useEffect(() => {
-    if (totalWordCount > 0) {
-      const currentAccuracy =
-        (correctWordCount / (correctWordCount + incorrectWordCount)) * 100 || 0;
-      setAccuracy(currentAccuracy);
-    }
-  });
+    const currentAccuracy =
+      (correctWordCount / (correctWordCount + incorrectWordCount)) * 100 || 0;
+    setAccuracy(currentAccuracy);
+  }, [correctWordCount, incorrectWordCount, totalWordCount, accuracy]);
 
   return (
     <div className="main-container">
