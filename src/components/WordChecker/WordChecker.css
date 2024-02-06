@@ -1,0 +1,14 @@
+.active {
+  font-weight: bolder;
+}
+.correct {
+  color: rgb(105, 248, 105);
+  font-weight: bolder;
+}
+.incorrect {
+  color: rgb(246, 112, 112);
+  font-weight: bolder;
+}
+span {
+  color: black;
+}

@@ -1,0 +1,19 @@
+.time-card {
+  width: 6.25rem;
+  background-color: #fff78a;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.count {
+  font-size: 1.5rem;
+  color: white;
+}
+.txt {
+  color: black;
+  font-size: 0.75rem;
+}
